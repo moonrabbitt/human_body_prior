@@ -38,7 +38,8 @@ def exprdir2model(expr_dir, model_cfg_override: dict = None):
     if len(model_cfg_fname) == 0:
         model_cfg_fname = glob.glob(osp.join('/'.join(trained_weights_fname.split('/')[:-2]), '*.yaml'))
 
-    model_cfg_fname = model_cfg_fname[0]
+    # model_cfg_fname = model_cfg_fname[0]
+    model_cfg_fname = "D:\\Code Tutorials\\human_body_prior\\models\\V02_05\\V02_05.yaml"
     model_cfg = OmegaConf.load(model_cfg_fname)
     if model_cfg_override:
         override_cfg_dotlist = [f'{k}={v}' for k, v in model_cfg_override.items()]
